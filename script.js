@@ -43,7 +43,7 @@ function deletingEffect() {
 
 typingEffect();
 
-// RELIABLE RESUME DOWNLOAD / PRINT FUNCTION
+// RELIABLE RESUME DOWNLOAD / PRINT FUNCTION (UPDATED WITH NEW RESUME CONTENT)
 function downloadResume() {
     const printWindow = window.open('', '_blank');
     const resumeHTML = `
@@ -55,19 +55,19 @@ function downloadResume() {
         <style>
             @page {
                 size: A4;
-                margin: 20mm;
+                margin: 15mm 20mm;
             }
             body { 
                 font-family: 'Segoe UI', Arial, sans-serif; 
                 color: #1f2937; 
                 line-height: 1.4; 
-                font-size: 11pt;
+                font-size: 10.5pt;
                 margin: 0;
                 padding: 0;
             }
             h1 { 
                 color: #0284c7; 
-                font-size: 22pt; 
+                font-size: 20pt; 
                 margin: 0 0 4px 0; 
                 text-transform: uppercase; 
                 letter-spacing: 0.5px;
@@ -76,29 +76,29 @@ function downloadResume() {
                 color: #0f172a; 
                 border-bottom: 2px solid #0284c7; 
                 padding-bottom: 3px; 
-                margin-top: 18px; 
-                margin-bottom: 8px;
-                font-size: 12pt; 
+                margin-top: 14px; 
+                margin-bottom: 6px;
+                font-size: 11.5pt; 
                 text-transform: uppercase; 
                 letter-spacing: 0.5px;
             }
             p { 
-                margin: 0 0 5px 0; 
+                margin: 0 0 4px 0; 
             }
             ul { 
-                margin-top: 4px; 
-                margin-bottom: 8px; 
+                margin-top: 3px; 
+                margin-bottom: 6px; 
                 padding-left: 20px; 
             }
             li { 
-                margin-bottom: 4px; 
+                margin-bottom: 3px; 
             }
             .contact-info { 
                 color: #4b5563; 
-                font-size: 9.5pt; 
-                margin-bottom: 12px; 
+                font-size: 9pt; 
+                margin-bottom: 10px; 
                 border-bottom: 1px solid #e5e7eb; 
-                padding-bottom: 8px; 
+                padding-bottom: 6px; 
             }
             .job-header {
                 font-weight: bold;
@@ -108,8 +108,14 @@ function downloadResume() {
             .job-date {
                 font-style: italic;
                 color: #4b5563;
-                font-size: 10pt;
+                font-size: 9.5pt;
                 margin-bottom: 4px;
+            }
+            .declaration {
+                margin-top: 14px;
+                font-size: 9.5pt;
+                color: #374151;
+                font-style: italic;
             }
         </style>
     </head>
@@ -124,16 +130,17 @@ function downloadResume() {
 
         <h2>EDUCATION</h2>
         <p class="job-header">B.Tech in Computer Science and Systems Engineering</p>
-        <p>Sree Vidyanikethan Engineering College, Tirupati (2019 – 2023) &nbsp;|&nbsp; Score: 71%</p>
+        <p>Sree Vidyanikethan Engineering College, Tirupati (2019 – 2023) &nbsp;|&nbsp; 71%</p>
 
         <h2>WORK EXPERIENCE</h2>
         <p class="job-header">Adept Talent Acquisition &nbsp;|&nbsp; Subject Matter Expert (SME) – Data Annotation</p>
         <p class="job-date">May 2025 – Present</p>
         <ul>
             <li>Handled and coordinated a team of around 25+ annotators, managing workload distribution, quality checks, and performance tracking.</li>
-            <li>Served as the primary client Point of Contact (POC), participating in weekly sync-up calls to communicate production milestones and quality metrics.</li>
+            <li>Served as the primary client Point of Contact (POC), participating Weekly sync-up calls to communicate production milestones and quality metrics. Managed daily operational follow-ups and resolved project escalations to maintain high client satisfaction and standards.</li>
             <li>Led multiple LIDAR annotation projects for autonomous driving datasets, improving labeling accuracy by up to 25% through process optimization.</li>
             <li>Trained and mentored junior annotators on 2D/3D labeling, segmentation, and polyline annotation best practices.</li>
+            <li>Performed in-depth point cloud analysis for object detection and lane marking projects.</li>
         </ul>
 
         <p class="job-header">MNV Solutions (Client: Marg ERP Ltd) &nbsp;|&nbsp; Technical Associate</p>
@@ -146,14 +153,29 @@ function downloadResume() {
 
         <h2>TECHNICAL SKILLS</h2>
         <p><b>Languages & Web:</b> Python, SQL, HTML, Prompt Engineering</p>
-        <p><b>Tools & Platforms:</b> AWS Concepts, Marg ERP Software, Coda AI automation, Labelbox, Scale AI</p>
-        <p><b>Core Competencies:</b> Data Analysis, Database Troubleshooting, Technical Support, Team Leadership, Workload Management</p>
+        <p><b>Tools & Platforms:</b> AWS Concepts, Marg ERP Software, Coda AI automation</p>
+        <p><b>Data Annotation Tools:</b> HCP tool, Labeling, Labelbox, Scale AI, etc.</p>
+        <p><b>Quality Assurance:</b> Dataset Quality Assurance & Validation</p>
+        <p><b>Core Competencies:</b> Data Analysis, Database Troubleshooting, Technical Support, Team Leadership, Workload Management, System Configuration, Problem Solving</p>
 
         <h2>PROJECTS</h2>
-        <p class="job-header">Legal & Administrative Case Management Hub</p>
+        <p class="job-header">Legal & Administrative Case Management Hub &nbsp;|&nbsp; <i>Vanilla JS, HTML5, CSS3, Chart.js, Prompt Engineering</i></p>
         <ul>
-            <li>Designed and built an interactive administrative dashboard leveraging prompt engineering to structure single-page web workflows.</li>
-            <li>Implemented live dynamic search filtering, PDF document attachment previews, and interactive Chart.js analytics.</li>
+            <li>Designed and built an interactive administrative dashboard leveraging prompt engineering to structure single-page web workflows and data storage.</li>
+            <li>Implemented live dynamic search filtering, PDF document attachment previews, inline table updates, and offline JSON data export/import capabilities.</li>
+            <li>Integrated dynamic Graphical Analytics using Chart.js to map pending case distributions visually across multiple administrative divisions.</li>
+        </ul>
+
+        <p class="job-header">Academic Project: Stock Market Evaluation using Supervised Machine Learning &nbsp;|&nbsp; <i>Python, SVM, Decision Tree, Linear Regression</i></p>
+        <ul>
+            <li>Structured, cleaned, and processed raw financial datasets to perform comparative performance evaluation.</li>
+            <li>Evaluated confidence and accuracy metrics across multiple algorithms to select the optimal model for prediction tasks.</li>
+        </ul>
+
+        <p class="job-header">Academic Project: E-Commerce Web Application &nbsp;|&nbsp; <i>SQL, HTML, CSS, JavaScript</i></p>
+        <ul>
+            <li>Designed and configured a relational database to store user records, product details, and transaction data for a direct sales platform.</li>
+            <li>Defined entity relationships using primary and foreign keys, and wrote optimized SQL queries for data retrieval and manipulation.</li>
         </ul>
 
         <h2>CERTIFICATIONS</h2>
@@ -163,13 +185,15 @@ function downloadResume() {
             <li>Web Development Using Django Certificate</li>
             <li>Salesforce Certification</li>
         </ul>
+
+        <h2>DECLARATION</h2>
+        <p class="declaration">I hereby declare that the information furnished above is true up to my knowledge and bear the responsibility for the correctness of the above mentioned particulars.</p>
     </body>
     </html>`;
 
     printWindow.document.write(resumeHTML);
     printWindow.document.close();
     
-    // Automatically trigger PDF print prompt once content is loaded
     printWindow.onload = function() {
         printWindow.print();
     };
@@ -179,7 +203,6 @@ function downloadResume() {
 document.addEventListener('DOMContentLoaded', () => {
     const heroHeader = document.querySelector('header');
     
-    // Assign left and right popup classes
     const setupPopups = () => {
         const rows = document.querySelectorAll('.experience-row, .project-row, .education-row');
         rows.forEach(row => {
@@ -244,7 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     setTimeout(() => {
                         rights.forEach(el => el.classList.add('show-popup'));
-                    }, 650); // Gap after left side pops
+                    }, 650);
                 }
             }
         });
