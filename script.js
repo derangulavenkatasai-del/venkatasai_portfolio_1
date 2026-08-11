@@ -43,165 +43,136 @@ function deletingEffect() {
 
 typingEffect();
 
-// RESUME DOWNLOAD FUNCTION FOR MICROSOFT WORD
+// RELIABLE RESUME DOWNLOAD / PRINT FUNCTION
 function downloadResume() {
+    const printWindow = window.open('', '_blank');
     const resumeHTML = `
-    <html xmlns:o='urn:schemas-microsoft-com:office:office' 
-          xmlns:w='urn:schemas-microsoft-com:office:word' 
-          xmlns='http://www.w3.org/TR/REC-html40'>
+    <!DOCTYPE html>
+    <html>
     <head>
         <meta charset="utf-8">
-        <title>Venkata Sai Derangula Resume</title>
-        <!--[if gte mso 9]>
-        <xml>
-            <w:WordDocument>
-                <w:View>Print</w:View>
-                <w:Zoom>100</w:Zoom>
-                <w:DoNotOptimizeForBrowser/>
-            </w:WordDocument>
-        </xml>
-        <![endif]-->
+        <title>Venkata Sai Derangula - Resume</title>
         <style>
-            @page Section1 {
-                size: 8.5in 11.0in;
-                margin: 0.75in 0.75in 0.75in 0.75in;
-                mso-header-margin: 0.5in;
-                mso-footer-margin: 0.5in;
-                mso-paper-source: 0;
+            @page {
+                size: A4;
+                margin: 20mm;
             }
-            div.Section1 { page: Section1; }
-            
             body { 
-                font-family: 'Calibri', 'Segoe UI', Arial, sans-serif; 
+                font-family: 'Segoe UI', Arial, sans-serif; 
                 color: #1f2937; 
-                line-height: 1.35; 
-                font-size: 10.5pt; 
+                line-height: 1.4; 
+                font-size: 11pt;
+                margin: 0;
+                padding: 0;
             }
             h1 { 
                 color: #0284c7; 
-                font-size: 20pt; 
-                font-weight: bold; 
-                margin: 0 0 4pt 0; 
-                text-transform: uppercase;
-                letter-spacing: 0.5pt;
+                font-size: 22pt; 
+                margin: 0 0 4px 0; 
+                text-transform: uppercase; 
+                letter-spacing: 0.5px;
             }
             h2 { 
                 color: #0f172a; 
+                border-bottom: 2px solid #0284c7; 
+                padding-bottom: 3px; 
+                margin-top: 18px; 
+                margin-bottom: 8px;
                 font-size: 12pt; 
-                font-weight: bold;
-                text-transform: uppercase;
-                border-bottom: 1.5pt solid #0284c7; 
-                padding-bottom: 2pt; 
-                margin-top: 14pt; 
-                margin-bottom: 6pt; 
+                text-transform: uppercase; 
+                letter-spacing: 0.5px;
             }
             p { 
-                margin: 0 0 4pt 0; 
+                margin: 0 0 5px 0; 
             }
             ul { 
-                margin-top: 2pt; 
-                margin-bottom: 6pt; 
-                padding-left: 18pt; 
+                margin-top: 4px; 
+                margin-bottom: 8px; 
+                padding-left: 20px; 
             }
             li { 
-                margin-bottom: 3pt; 
-                text-align: justify;
+                margin-bottom: 4px; 
             }
             .contact-info { 
                 color: #4b5563; 
                 font-size: 9.5pt; 
-                margin-bottom: 12pt; 
-                border-bottom: 0.5pt solid #e5e7eb;
-                padding-bottom: 6pt;
+                margin-bottom: 12px; 
+                border-bottom: 1px solid #e5e7eb; 
+                padding-bottom: 8px; 
             }
             .job-header {
-                font-size: 10.5pt;
-                margin-top: 6pt;
-                margin-bottom: 2pt;
-            }
-            .job-title {
                 font-weight: bold;
                 color: #0f172a;
+                margin-top: 6px;
             }
             .job-date {
                 font-style: italic;
                 color: #4b5563;
-            }
-            .skills-section p {
-                margin-bottom: 3pt;
+                font-size: 10pt;
+                margin-bottom: 4px;
             }
         </style>
     </head>
     <body>
-        <div class="Section1">
-            <h1>VENKATA SAI DERANGULA</h1>
-            <div class="contact-info">
-                Tirupati, Andhra Pradesh, India &nbsp;|&nbsp; +91 8074267018 &nbsp;|&nbsp; derangulavenkatasai@gmail.com &nbsp;|&nbsp; LinkedIn: linkedin.com/in/venkata-sai-derangula-b232b6243
-            </div>
-
-            <h2>PROFESSIONAL SUMMARY</h2>
-            <p>Computer Science graduate with hands-on experience in technical operations, data pipelines, prompt engineering, and relational database management. Backed by an IBM certification in Databases and SQL for Data Science, practical academic project work in database design, and professional experience managing data operations teams, client communications, and technical support. Detail-oriented and analytical, seeking an entry-level SQL Developer position to leverage database design, query writing, prompt optimization, and data management skills.</p>
-
-            <h2>EDUCATION</h2>
-            <p class="job-header"><span class="job-title">B.Tech in Computer Science and Systems Engineering</span></p>
-            <p>Sree Vidyanikethan Engineering College, Tirupati (2019 – 2023) &nbsp;|&nbsp; Score: 71%</p>
-
-            <h2>WORK EXPERIENCE</h2>
-            <p class="job-header">
-                <span class="job-title">Adept Talent Acquisition</span> &nbsp;|&nbsp; <b>Subject Matter Expert (SME) – Data Annotation</b>
-            </p>
-            <p class="job-date">May 2025 – Present</p>
-            <ul>
-                <li>Handled and coordinated a team of around 25+ annotators, managing workload distribution, quality checks, and performance tracking.</li>
-                <li>Served as the primary client Point of Contact (POC), participating in weekly sync-up calls to communicate production milestones and quality metrics.</li>
-                <li>Led multiple LIDAR annotation projects for autonomous driving datasets, improving labeling accuracy by up to 25% through process optimization.</li>
-                <li>Trained and mentored junior annotators on 2D/3D labeling, segmentation, and polyline annotation best practices.</li>
-            </ul>
-
-            <p class="job-header">
-                <span class="job-title">MNV Solutions (Client: Marg ERP Ltd)</span> &nbsp;|&nbsp; <b>Technical Associate</b>
-            </p>
-            <p class="job-date">July 2024 – March 2025</p>
-            <ul>
-                <li>Delivered technical support and database troubleshooting for end-users operating Marg ERP software.</li>
-                <li>Conducted system configurations, database updates, and software installations via remote management tools.</li>
-                <li>Resolved technical and system-level issues to ensure operational stability and data accuracy.</li>
-            </ul>
-
-            <h2>TECHNICAL SKILLS</h2>
-            <div class="skills-section">
-                <p><b>Languages & Web:</b> Python, SQL, HTML, Prompt Engineering</p>
-                <p><b>Tools & Platforms:</b> AWS Concepts, Marg ERP Software, Coda AI automation, Labelbox, Scale AI</p>
-                <p><b>Core Competencies:</b> Data Analysis, Database Troubleshooting, Technical Support, Team Leadership, Workload Management</p>
-            </div>
-
-            <h2>PROJECTS</h2>
-            <p class="job-header"><span class="job-title">Legal & Administrative Case Management Hub</span></p>
-            <ul>
-                <li>Designed and built an interactive administrative dashboard leveraging prompt engineering to structure single-page web workflows.</li>
-                <li>Implemented live dynamic search filtering, PDF document attachment previews, and interactive Chart.js analytics.</li>
-            </ul>
-
-            <h2>CERTIFICATIONS</h2>
-            <ul>
-                <li>IBM Certificate in Databases and SQL for Data Science – Coursera</li>
-                <li>Simplilearn Certification in Python</li>
-                <li>Web Development Using Django Certificate</li>
-                <li>Salesforce Certification</li>
-            </ul>
+        <h1>VENKATA SAI DERANGULA</h1>
+        <div class="contact-info">
+            Tirupati, Andhra Pradesh, India &nbsp;|&nbsp; +91 8074267018 &nbsp;|&nbsp; derangulavenkatasai@gmail.com &nbsp;|&nbsp; LinkedIn: linkedin.com/in/venkata-sai-derangula-b232b6243
         </div>
+
+        <h2>PROFESSIONAL SUMMARY</h2>
+        <p>Computer Science graduate with hands-on experience in technical operations, data pipelines, prompt engineering, and relational database management. Backed by an IBM certification in Databases and SQL for Data Science, practical academic project work in database design, and professional experience managing data operations teams, client communications, and technical support. Detail-oriented and analytical, seeking an entry-level SQL Developer position to leverage database design, query writing, prompt optimization, and data management skills.</p>
+
+        <h2>EDUCATION</h2>
+        <p class="job-header">B.Tech in Computer Science and Systems Engineering</p>
+        <p>Sree Vidyanikethan Engineering College, Tirupati (2019 – 2023) &nbsp;|&nbsp; Score: 71%</p>
+
+        <h2>WORK EXPERIENCE</h2>
+        <p class="job-header">Adept Talent Acquisition &nbsp;|&nbsp; Subject Matter Expert (SME) – Data Annotation</p>
+        <p class="job-date">May 2025 – Present</p>
+        <ul>
+            <li>Handled and coordinated a team of around 25+ annotators, managing workload distribution, quality checks, and performance tracking.</li>
+            <li>Served as the primary client Point of Contact (POC), participating in weekly sync-up calls to communicate production milestones and quality metrics.</li>
+            <li>Led multiple LIDAR annotation projects for autonomous driving datasets, improving labeling accuracy by up to 25% through process optimization.</li>
+            <li>Trained and mentored junior annotators on 2D/3D labeling, segmentation, and polyline annotation best practices.</li>
+        </ul>
+
+        <p class="job-header">MNV Solutions (Client: Marg ERP Ltd) &nbsp;|&nbsp; Technical Associate</p>
+        <p class="job-date">July 2024 – March 2025</p>
+        <ul>
+            <li>Delivered technical support and database troubleshooting for end-users operating Marg ERP software.</li>
+            <li>Conducted system configurations, database updates, and software installations via remote management tools.</li>
+            <li>Resolved technical and system-level issues to ensure operational stability and data accuracy.</li>
+        </ul>
+
+        <h2>TECHNICAL SKILLS</h2>
+        <p><b>Languages & Web:</b> Python, SQL, HTML, Prompt Engineering</p>
+        <p><b>Tools & Platforms:</b> AWS Concepts, Marg ERP Software, Coda AI automation, Labelbox, Scale AI</p>
+        <p><b>Core Competencies:</b> Data Analysis, Database Troubleshooting, Technical Support, Team Leadership, Workload Management</p>
+
+        <h2>PROJECTS</h2>
+        <p class="job-header">Legal & Administrative Case Management Hub</p>
+        <ul>
+            <li>Designed and built an interactive administrative dashboard leveraging prompt engineering to structure single-page web workflows.</li>
+            <li>Implemented live dynamic search filtering, PDF document attachment previews, and interactive Chart.js analytics.</li>
+        </ul>
+
+        <h2>CERTIFICATIONS</h2>
+        <ul>
+            <li>IBM Certificate in Databases and SQL for Data Science – Coursera</li>
+            <li>Simplilearn Certification in Python</li>
+            <li>Web Development Using Django Certificate</li>
+            <li>Salesforce Certification</li>
+        </ul>
     </body>
     </html>`;
 
-    const blob = new Blob(['\ufeff' + resumeHTML], { type: 'application/msword;charset=utf-8' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'Venkata_Sai_Derangula_Resume.doc';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    window.URL.revokeObjectURL(url);
+    printWindow.document.write(resumeHTML);
+    printWindow.document.close();
+    
+    // Automatically trigger PDF print prompt once content is loaded
+    printWindow.onload = function() {
+        printWindow.print();
+    };
 }
 
 // STAGGERED POP-UP ANIMATION: LEFT SIDE FIRST, THEN RIGHT SIDE
