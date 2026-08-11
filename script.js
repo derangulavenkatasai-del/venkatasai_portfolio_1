@@ -43,7 +43,7 @@ function deletingEffect() {
 
 typingEffect();
 
-// RESUME DOWNLOAD FUNCTION (Word Document Format)
+// RESUME DOWNLOAD FUNCTION FOR MICROSOFT WORD (.docx)
 function downloadResume() {
     const resumeHTML = `
     <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
@@ -94,17 +94,12 @@ function downloadResume() {
         <h2>TECHNICAL SKILLS</h2>
         <p><b>Languages & Web:</b> Python, SQL, HTML, Prompt Engineering</p>
         <p><b>Tools & Platforms:</b> AWS Concepts, Marg ERP Software, Coda AI automation, Labelbox, Scale AI</p>
-        <p><b>Core Competencies:</b> Data Analysis, Database Troubleshooting, Technical Support, Team Leadership, Workload Management</p>
 
         <h2>PROJECTS</h2>
         <p><b>Legal & Administrative Case Management Hub</b></p>
         <ul>
             <li>Designed and built an interactive administrative dashboard leveraging prompt engineering to structure single-page web workflows.</li>
             <li>Implemented live dynamic search filtering, PDF document attachment previews, and interactive Chart.js analytics.</li>
-        </ul>
-        <p><b>Stock Market Evaluation using Supervised Machine Learning</b></p>
-        <ul>
-            <li>Structured, cleaned, and processed raw financial datasets to perform comparative performance evaluations across SVM and Decision Trees.</li>
         </ul>
 
         <h2>CERTIFICATIONS</h2>
@@ -117,14 +112,89 @@ function downloadResume() {
     </body>
     </html>`;
 
-    const blob = new Blob(['\ufeff' + resumeHTML], { type: 'application/msword' });
+    const blob = new Blob(['\ufeff' + resumeHTML], { type: 'application/vnd.ms-word' });
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'Venkata_Sai_Derangula_Resume.doc';
+    a.download = 'Venkata_Sai_Derangula_Resume.docx';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     window.URL.revokeObjectURL(url);
 }
-```[cite: 1]
+
+// STAGGERED POP-UP ANIMATION: LEFT SIDE FIRST, THEN RIGHT SIDE
+document.addEventListener('DOMContentLoaded', () => {
+    const heroHeader = document.querySelector('header');
+    
+    // Assign left and right popup classes
+    const setupPopups = () => {
+        const rows = document.querySelectorAll('.experience-row, .project-row, .education-row');
+        rows.forEach(row => {
+            const leftCol = row.querySelector('.timeline-item-body');
+            const rightCol = row.querySelector('.experience-graphic, .project-graphic, .education-graphic');
+            if (leftCol) leftCol.classList.add('scroll-popup-left');
+            if (rightCol) rightCol.classList.add('scroll-popup-right');
+        });
+
+        const cards = document.querySelectorAll('.card, .cert-card');
+        cards.forEach((card, index) => {
+            if (index % 2 === 0) {
+                card.classList.add('scroll-popup-left');
+            } else {
+                card.classList.add('scroll-popup-right');
+            }
+        });
+    };
+
+    setupPopups();
+
+    // 1. Scroll-triggered Pop-ups
+    const handleScrollPopups = () => {
+        const heroBottom = heroHeader ? heroHeader.getBoundingClientRect().bottom : 0;
+        const targetElements = document.querySelectorAll('.scroll-popup-left, .scroll-popup-right');
+
+        targetElements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            const isVisible = rect.top <= window.innerHeight * 0.88 && rect.bottom >= 0;
+
+            if (heroBottom < window.innerHeight / 2 && isVisible) {
+                el.classList.add('show-popup');
+            } else {
+                el.classList.remove('show-popup');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', handleScrollPopups);
+    handleScrollPopups();
+
+    // 2. Navigation Link Click-triggered Pop-ups
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const targetId = link.getAttribute('href');
+            
+            if (targetId && targetId !== '#about') {
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    const lefts = targetSection.querySelectorAll('.scroll-popup-left');
+                    const rights = targetSection.querySelectorAll('.scroll-popup-right');
+                    
+                    lefts.forEach(el => el.classList.remove('show-popup'));
+                    rights.forEach(el => el.classList.remove('show-popup'));
+
+                    setTimeout(() => {
+                        lefts.forEach(el => el.classList.add('show-popup'));
+                    }, 200);
+
+                    setTimeout(() => {
+                        rights.forEach(el => el.classList.add('show-popup'));
+                    }, 650); // Gap after left side pops
+                }
+            }
+        });
+    });
+});
