@@ -420,9 +420,9 @@ section {
     font-size: 0.9rem;
 }
 
-/* DYNAMIC ANIMATIONS */
+/* DYNAMIC LIVE SVG ANIMATIONS (EXPLICIT DISPLAY FIX) */
 .scan-laser {
-    animation: scanMove 3s ease-in-out infinite alternate;
+    animation: scanMove 3s ease-in-out infinite alternate !important;
 }
 @keyframes scanMove {
     0% { transform: translateY(0px); opacity: 0.3; }
@@ -431,7 +431,7 @@ section {
 }
 
 .bbox-pulse {
-    animation: bboxScale 2.5s infinite ease-in-out;
+    animation: bboxScale 2.5s infinite ease-in-out !important;
     transform-origin: center;
 }
 @keyframes bboxScale {
@@ -440,7 +440,7 @@ section {
 }
 
 .cursor-blink {
-    animation: cursorBlink 0.8s infinite;
+    animation: cursorBlink 0.8s infinite !important;
 }
 @keyframes cursorBlink {
     0%, 100% { opacity: 1; }
@@ -449,7 +449,7 @@ section {
 
 .pulse-wave {
     stroke-dasharray: 8;
-    animation: waveFlow 1s linear infinite;
+    animation: waveFlow 1s linear infinite !important;
 }
 @keyframes waveFlow {
     0% { stroke-dashoffset: 16; }
@@ -457,7 +457,7 @@ section {
 }
 
 .live-ping {
-    animation: pingPulse 1.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    animation: pingPulse 1.2s cubic-bezier(0, 0, 0.2, 1) infinite !important;
 }
 @keyframes pingPulse {
     0% { r: 3px; opacity: 1; }
@@ -465,7 +465,7 @@ section {
 }
 
 .meter-fill {
-    animation: meterGrow 2s ease-in-out infinite alternate;
+    animation: meterGrow 2s ease-in-out infinite alternate !important;
 }
 @keyframes meterGrow {
     0% { width: 30px; }
@@ -473,7 +473,7 @@ section {
 }
 
 .bar-pulse {
-    animation: barStretch 2.5s ease-in-out infinite alternate;
+    animation: barStretch 2.5s ease-in-out infinite alternate !important;
     transform-origin: bottom;
 }
 @keyframes barStretch {
@@ -483,16 +483,15 @@ section {
 
 .data-flow {
     stroke-dasharray: 6;
-    animation: flowData 1.5s linear infinite;
+    animation: flowData 1.5s linear infinite !important;
 }
 @keyframes flowData {
     from { stroke-dashoffset: 24; }
     to { stroke-dashoffset: 0; }
 }
 
-/* HIGH-OCTANE LIVE-ACTION EDUCATION ANIMATIONS */
 .cap-super-float {
-    animation: capSuperFloatAnim 2.8s ease-in-out infinite alternate;
+    animation: capSuperFloatAnim 2.8s ease-in-out infinite alternate !important;
     transform-origin: center;
 }
 @keyframes capSuperFloatAnim {
@@ -502,7 +501,7 @@ section {
 }
 
 .radar-sweep {
-    animation: radarSpin 4s linear infinite;
+    animation: radarSpin 4s linear infinite !important;
     transform-origin: 200px 72px;
 }
 @keyframes radarSpin {
@@ -512,7 +511,7 @@ section {
 
 .stream-line-active {
     stroke-dasharray: 10 5;
-    animation: streamFlowActive 0.8s linear infinite;
+    animation: streamFlowActive 0.8s linear infinite !important;
 }
 @keyframes streamFlowActive {
     from { stroke-dashoffset: 30; }
@@ -520,7 +519,7 @@ section {
 }
 
 .code-matrix-glitch {
-    animation: matrixGlitch 1.5s ease-in-out infinite alternate;
+    animation: matrixGlitch 1.5s ease-in-out infinite alternate !important;
 }
 @keyframes matrixGlitch {
     0% { opacity: 0.4; transform: translateX(0px); }
@@ -529,7 +528,7 @@ section {
 }
 
 .pulse-core {
-    animation: coreHeartbeat 1.6s ease-in-out infinite;
+    animation: coreHeartbeat 1.6s ease-in-out infinite !important;
     transform-origin: center;
 }
 @keyframes coreHeartbeat {
@@ -538,7 +537,7 @@ section {
 }
 
 .progress-bar-live {
-    animation: progressFillWave 3s ease-in-out infinite alternate;
+    animation: progressFillWave 3s ease-in-out infinite alternate !important;
 }
 @keyframes progressFillWave {
     0% { width: 40px; }
@@ -573,27 +572,6 @@ section {
     transform: translateY(-8px);
     border-color: var(--accent-color);
     box-shadow: 0 12px 30px var(--accent-glow);
-}
-
-.card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(56, 189, 248, 0.08),
-        transparent
-    );
-    transition: left 0.7s ease;
-    z-index: 1;
-}
-
-.card:hover::before {
-    left: 100%;
 }
 
 .badge-container {
@@ -683,6 +661,28 @@ footer {
     border-top: 1px solid var(--border-color);
 }
 
+/* STAGGERED POP-UP ANIMATIONS THAT KEEP SVG ANIMATIONS ACTIVE */
+.scroll-popup-left {
+    opacity: 0;
+    transform: translateX(-80px) scale(0.85);
+    transition: opacity 0.5s ease, transform 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
+    will-change: transform, opacity;
+}
+
+.scroll-popup-right {
+    opacity: 0;
+    transform: translateX(80px) scale(0.85);
+    transition: opacity 0.5s ease, transform 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition-delay: 0.45s;
+    will-change: transform, opacity;
+}
+
+.scroll-popup-left.show-popup,
+.scroll-popup-right.show-popup {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
 @media (max-width: 900px) {
     header {
         grid-template-columns: 1fr;
@@ -693,6 +693,7 @@ footer {
     .photo-wrapper { margin-top: 2rem; }
     .experience-row, .project-row, .education-row { flex-direction: column; }
     .experience-graphic, .project-graphic, .education-graphic { margin-top: 1.5rem; width: 100%; }
+    .scroll-popup-right { transition-delay: 0.2s; }
 }
 
 @media (max-width: 768px) {
