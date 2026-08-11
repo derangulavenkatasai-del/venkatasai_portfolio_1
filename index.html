@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venkata Sai Derangula | Portfolio</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Venkata Sai Derangula</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header / Hero Section -->
+    <header id="about">
+        <div class="hero-content">
+            <p class="hero-tag">Welcome to my Interactive Portfolio</p>
+            <h1>Venkata Sai Derangula</h1>
+            <h2>I am a <span class="typing-text"></span></h2>
+            <p class="summary">
+                Computer Science graduate backed by an IBM SQL Certification and hands-on experience leading tech operations. Proven expertise in managing database workflows, training annotation teams, and executing complex data pipeline QA.
+            </p>
+            <div class="btn-container">
+                <a href="#contact" class="btn btn-primary">Contact Me</a>
+                <a href="https://linkedin.com/in/venkata-sai-derangula-b232b6243" target="_blank" class="btn btn-secondary">LinkedIn Profile</a>
+                <button onclick="downloadResume()" class="btn btn-download">📄 Download Resume</button>
+            </div>
+        </div>
+
+        <div class="photo-wrapper">
+            <div class="flip-card" id="profileCard" onclick="togglePhotoFlip()">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="WhatsApp Image 2026-08-10 at 10.40.36 PM.jpeg" alt="Venkata Sai Derangula - Headshot">
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="WhatsApp Image 2026-08-10 at 10.40.36 PM (1).jpeg" alt="Venkata Sai Derangula - Profile">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- WORK EXPERIENCE SECTION -->
+    <section id="experience">
+        <h2 class="section-title">Work Experience</h2>
+        
+        <div class="experience-timeline">
+
+            <!-- EXPERIENCE 1: SME ROLE -->
+            <div class="experience-row">
+                <div class="timeline-dot active-pulse"></div>
+                
+                <div class="timeline-item-body">
+                    <div class="timeline-content">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Subject Matter Expert (SME) – Data Annotation</div>
+                                <div class="job-company">Adept Talent Acquisition</div>
+                            </div>
+                            <div class="job-date">May 2025 – Present</div>
+                        </div>
+                        <ul class="animated-list">
+                            <li>Managed and coordinated a team of <span class="metric-badge">25+ annotators</span>, overseeing workload distribution, quality checks, and performance tracking.</li>
+                            <li>Served as primary client Point of Contact (<span class="metric-badge">POC</span>) in weekly sync-up calls to communicate production milestones and quality metrics.</li>
+                            <li>Led multiple LIDAR annotation projects for autonomous driving datasets, improving labeling accuracy by up to <span class="metric-badge">25%</span> through process optimization.</li>
+                            <li>Trained and mentored junior annotators on 2D/3D labeling, segmentation, and polyline annotation best practices.</li>
+                            <li>Performed in-depth point cloud analysis for object detection and lane marking projects.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-graphic">
+                    <svg class="animated-svg" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="10" width="380" height="280" rx="14" fill="#0b1329" stroke="#1f2937" stroke-width="2"/>
+                        <text x="30" y="38" fill="#38bdf8" font-size="11" font-weight="bold" font-family="monospace">LIDAR 3D POINT-CLOUD [SME ROLE]</text>
+                        <rect x="290" y="24" width="80" height="20" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+                        <circle cx="300" cy="34" r="3" fill="#10b981" class="live-ping"/>
+                        <text x="333" y="38" fill="#10b981" font-size="9" font-weight="bold" text-anchor="middle">POC ACTIVE</text>
+                        <line class="scan-laser" x1="15" y1="60" x2="385" y2="60" stroke="#38bdf8" stroke-width="2" filter="drop-shadow(0 0 8px #38bdf8)"/>
+
+                        <g class="bbox-pulse" transform="translate(110, 90)">
+                            <polygon points="40,20 120,20 150,50 70,50" fill="rgba(56, 189, 248, 0.2)" stroke="#38bdf8" stroke-width="2"/>
+                            <polygon points="40,80 120,80 150,110 70,110" fill="rgba(56, 189, 248, 0.05)" stroke="#38bdf8" stroke-dasharray="3 3"/>
+                            <line x1="40" y1="20" x2="40" y2="80" stroke="#38bdf8" stroke-width="2"/>
+                            <line x1="120" y1="20" x2="120" y2="80" stroke="#38bdf8" stroke-width="2"/>
+                            <line x1="150" y1="50" x2="150" y2="110" stroke="#38bdf8" stroke-width="2"/>
+                            <line x1="70" y1="50" x2="70" y2="110" stroke="#38bdf8" stroke-width="2"/>
+                            <text x="95" y="45" fill="#10b981" font-size="10" font-weight="bold" text-anchor="middle">Car [99.4%]</text>
+                        </g>
+
+                        <path d="M30 250 L120 150 L200 150 L350 250" stroke="#818cf8" stroke-width="2.5" stroke-dasharray="6 4"/>
+                        <circle cx="120" cy="150" r="4" fill="#38bdf8"/><circle cx="200" cy="150" r="4" fill="#38bdf8"/>
+                        <rect x="25" y="235" width="160" height="32" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
+                        <text x="35" y="255" fill="#f9fafb" font-size="10" font-weight="bold">👥 Team: <tspan fill="#38bdf8">25+ Annotators</tspan></text>
+                        <rect x="215" y="235" width="160" height="32" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+                        <text x="225" y="255" fill="#f9fafb" font-size="10" font-weight="bold">🎯 SME QA: <tspan fill="#10b981">+25% Accuracy</tspan></text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- EXPERIENCE 2: TECHNICAL ASSOCIATE -->
+            <div class="experience-row">
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-item-body">
+                    <div class="timeline-content">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Technical Associate</div>
+                                <div class="job-company">MNV Solutions (Client: Marg ERP Ltd)</div>
+                            </div>
+                            <div class="job-date">July 2024 – March 2025</div>
+                        </div>
+                        <ul class="animated-list">
+                            <li>Delivered specialized technical support and database troubleshooting for end-users operating Marg ERP software.</li>
+                            <li>Conducted system configurations, database updates, and software installations via remote management tools.</li>
+                            <li>Diagnosed and resolved complex system-level technical errors to ensure data accuracy and software stability.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-graphic">
+                    <svg class="animated-svg" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="10" width="380" height="280" rx="14" fill="#090d16" stroke="#1f2937" stroke-width="2"/>
+                        <rect x="25" y="25" width="350" height="30" rx="6" fill="#1e293b" stroke="#334155"/>
+                        <circle cx="40" cy="40" r="4" fill="#ef4444"/>
+                        <circle cx="52" cy="40" r="4" fill="#f59e0b"/>
+                        <circle cx="64" cy="40" r="4" fill="#10b981"/>
+                        <circle cx="355" cy="40" r="4" fill="#10b981" class="live-ping"/>
+                        <text x="80" y="44" fill="#38bdf8" font-size="9" font-weight="bold" font-family="monospace">LIVE SESSION: MARG_ERP_REMOTE_ADMIN</text>
+
+                        <rect x="25" y="65" width="200" height="155" rx="8" fill="#0b1329" stroke="#38bdf8" stroke-width="1.5"/>
+                        <rect x="25" y="65" width="200" height="20" rx="8" fill="#1e293b"/>
+                        <text x="35" y="78" fill="#9ca3af" font-size="8" font-family="monospace">⚡ SQL Terminal - Execution Engine</text>
+
+                        <text x="33" y="100" fill="#38bdf8" font-size="8" font-family="monospace">> SELECT * FROM marg_db.config;</text>
+                        <text x="33" y="118" fill="#10b981" font-size="8" font-family="monospace">> status: [OPTIMIZED]</text>
+                        <text x="33" y="136" fill="#38bdf8" font-size="8" font-family="monospace">> EXEC sp_fix_corrupt_index;</text>
+                        <text x="33" y="154" fill="#f59e0b" font-size="8" font-family="monospace">> Applying patch v2025...</text>
+                        <text x="33" y="172" fill="#10b981" font-size="8" font-weight="bold" font-family="monospace">> RESOLVED: 0 Errors Found <tspan fill="#38bdf8" class="cursor-blink">❚</tspan></text>
+
+                        <rect x="235" y="65" width="140" height="155" rx="8" fill="#111827" stroke="#1f2937"/>
+                        <text x="245" y="82" fill="#818cf8" font-size="9" font-weight="bold" text-anchor="start">SYSTEM DIAGNOSTICS</text>
+                        <text x="245" y="102" fill="#9ca3af" font-size="7.5">Remote Session Stability</text>
+                        <rect x="245" y="108" width="120" height="8" rx="4" fill="#1e293b"/>
+                        <rect class="meter-fill" x="245" y="108" width="90" height="8" rx="4" fill="#10b981"/>
+
+                        <text x="245" y="132" fill="#9ca3af" font-size="7.5">SQL Query Latency</text>
+                        <rect x="245" y="138" width="120" height="8" rx="4" fill="#1e293b"/>
+                        <rect x="245" y="138" width="30" height="8" rx="4" fill="#38bdf8"/>
+                        <text x="282" y="145" fill="#38bdf8" font-size="7" font-weight="bold">12ms</text>
+
+                        <rect x="245" y="160" width="120" height="45" rx="6" fill="#0f172a" stroke="#10b981" stroke-width="1"/>
+                        <text x="305" y="177" fill="#10b981" font-size="8" font-weight="bold" text-anchor="middle">✓ REMOTE FIX ACTIVE</text>
+                        <text x="305" y="193" fill="#9ca3af" font-size="7" text-anchor="middle">Marg ERP Configured</text>
+                        <path class="pulse-wave" d="M 225 140 L 235 140" stroke="#38bdf8" stroke-width="2"/>
+
+                        <rect x="25" y="230" width="350" height="45" rx="8" fill="#1e293b" stroke="#334155"/>
+                        <circle cx="45" cy="252" r="5" fill="#10b981"/>
+                        <text x="60" y="248" fill="#f9fafb" font-size="9" font-weight="bold">Technical Support & ERP Configuration Hub</text>
+                        <text x="60" y="262" fill="#9ca3af" font-size="8">Remote Diagnostics • SQL Troubleshooting • System Maintenance</text>
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="card">
+                <h3>Languages & Databases</h3>
+                <div class="badge-container">
+                    <span class="badge">⚡ SQL</span>
+                    <span class="badge">🐍 Python</span>
+                    <span class="badge">🌐 HTML5</span>
+                    <span class="badge">🤖 Prompt Engineering</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Tools & Platforms</h3>
+                <div class="badge-container">
+                    <span class="badge">☁️ AWS Concepts</span>
+                    <span class="badge">💼 Marg ERP</span>
+                    <span class="badge">📝 Coda AI</span>
+                    <span class="badge">🏷️ Scale AI</span>
+                    <span class="badge">📦 Labelbox</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS SECTION -->
+    <section id="certifications">
+        <h2 class="section-title">Certifications</h2>
+        <div class="cert-grid">
+            <div class="cert-card">
+                <div class="cert-icon">📜</div>
+                <div class="cert-info">
+                    <h3>IBM SQL Professional Certification</h3>
+                    <div class="cert-issuer">IBM / Coursera</div>
+                    <p class="cert-desc">Databases and SQL for Data Science: Relational database querying, schema design, data manipulation, and SQL optimization.</p>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon">🐍</div>
+                <div class="cert-info">
+                    <h3>Python Programming Certification</h3>
+                    <div class="cert-issuer">Simplilearn</div>
+                    <p class="cert-desc">Hands-on application of Python fundamentals, data handling, and scripting for automation and analysis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SECTION -->
+    <section id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+
+        <div class="projects-timeline">
+
+            <!-- PROJECT 1: Legal Hub -->
+            <div class="project-row">
+                <div class="timeline-dot active-pulse"></div>
+
+                <div class="timeline-item-body">
+                    <div class="timeline-content">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Legal & Administrative Case Management Hub</div>
+                                <div class="job-company">AI Web Dashboard & Analytics</div>
+                            </div>
+                            <div class="job-date">JavaScript, Chart.js, HTML/CSS</div>
+                        </div>
+                        <ul class="animated-list">
+                            <li>Designed and engineered an administrative dashboard leveraging targeted <span class="metric-badge">Prompt Engineering</span> for single-page web workflows.</li>
+                            <li>Integrated live dynamic search filters and interactive <span class="metric-badge">Chart.js</span> visual analytics for instant data insights.</li>
+                            <li>Structured clean, modular frontend components with optimized prompt instructions for rapid prototyping.</li>
+                        </ul>
+                        <div class="badge-container" style="margin-top: 1rem;">
+                            <span class="badge">🤖 Prompt Engineering</span>
+                            <span class="badge">Vanilla JS</span>
+                            <span class="badge">Chart.js</span>
+                            <span class="badge">HTML5 / CSS3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-graphic">
+                    <svg class="animated-svg" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="10" width="380" height="280" rx="14" fill="#0f172a" stroke="#1f2937" stroke-width="2"/>
+                        <rect x="30" y="30" width="340" height="35" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+                        <text x="45" y="52" fill="#38bdf8" font-size="11" font-family="monospace">🤖 Prompt: "Filter legal records by Q3 status"<tspan class="cursor-blink">❚</tspan></text>
+                        <rect x="30" y="80" width="340" height="195" rx="10" fill="#111827" stroke="#334155"/>
+                        <text x="45" y="105" fill="#f9fafb" font-size="11" font-weight="bold">📊 Live Analytics Hub (Chart.js)</text>
+                        <rect x="230" y="93" width="60" height="18" rx="9" fill="#38bdf8" opacity="0.2"/>
+                        <text x="260" y="105" fill="#38bdf8" font-size="8" font-weight="bold" text-anchor="middle">🔍 Active Filter</text>
+                        <line x1="50" y1="240" x2="350" y2="240" stroke="#334155" stroke-width="1.5"/>
+                        
+                        <g class="bar-pulse">
+                            <rect x="70" y="180" width="35" height="60" rx="4" fill="#0284c7"/>
+                            <rect x="135" y="155" width="35" height="85" rx="4" fill="#38bdf8"/>
+                            <rect x="200" y="195" width="35" height="45" rx="4" fill="#6366f1"/>
+                            <rect x="265" y="140" width="35" height="100" rx="4" fill="#818cf8"/>
+                        </g>
+
+                        <path d="M87 170 Q 152 130, 217 180 T 282 125" fill="none" stroke="#10b981" stroke-width="3"/>
+                        <circle cx="282" cy="125" r="5" fill="#10b981" class="live-ping"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- PROJECT 2: STOCK ML -->
+            <div class="project-row">
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-item-body">
+                    <div class="timeline-content">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Stock Market Evaluation ML</div>
+                                <div class="job-company">Machine Learning & Data Intelligence</div>
+                            </div>
+                            <div class="job-date">Python, SVM, Decision Trees</div>
+                        </div>
+                        <ul class="animated-list">
+                            <li>Structured and cleaned financial datasets to perform comparative performance evaluations across supervised algorithms.</li>
+                            <li>Applied <span class="metric-badge">Prompt Engineering</span> to generate optimized analytical code pipelines and feature extraction scripts.</li>
+                            <li>Evaluated algorithmic performance across Support Vector Machines (SVM) and Decision Trees to forecast trends.</li>
+                        </ul>
+                        <div class="badge-container" style="margin-top: 1rem;">
+                            <span class="badge">🤖 Prompt Engineering</span>
+                            <span class="badge">Python</span>
+                            <span class="badge">Machine Learning</span>
+                            <span class="badge">Financial Datasets</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-graphic">
+                    <svg class="animated-svg" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="10" width="380" height="280" rx="14" fill="#0b0f19" stroke="#1f2937" stroke-width="2"/>
+                        <rect x="30" y="110" width="90" height="80" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+                        <text x="75" y="138" fill="#ffffff" font-size="10" font-weight="bold" text-anchor="middle">Stock Data</text>
+                        <line x1="50" y1="150" x2="50" y2="175" stroke="#10b981" stroke-width="2"/>
+                        <line x1="75" y1="145" x2="75" y2="170" stroke="#ef4444" stroke-width="2"/>
+                        <line x1="100" y1="140" x2="100" y2="175" stroke="#10b981" stroke-width="2"/>
+                        <path class="data-flow" d="M120 150 L170 150" stroke="#38bdf8" stroke-width="2.5"/>
+                        
+                        <rect x="170" y="120" width="70" height="60" rx="10" fill="#0f172a" stroke="#818cf8" stroke-width="2"/>
+                        <text x="205" y="148" fill="#818cf8" font-size="9" font-weight="bold" text-anchor="middle">🤖 Prompt</text>
+                        <text x="205" y="162" fill="#9ca3af" font-size="8" text-anchor="middle">Extractor</text>
+                        
+                        <path class="data-flow" d="M240 140 L280 100" stroke="#38bdf8" stroke-width="2"/>
+                        <path class="data-flow" d="M240 160 L280 200" stroke="#818cf8" stroke-width="2"/>
+                        
+                        <rect x="280" y="75" width="90" height="48" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+                        <text x="325" y="98" fill="#38bdf8" font-size="10" font-weight="bold" text-anchor="middle">SVM Model</text>
+                        <text x="325" y="112" fill="#9ca3af" font-size="8" text-anchor="middle">Hyperplane</text>
+                        
+                        <rect x="280" y="175" width="90" height="48" rx="8" fill="#1e293b" stroke="#818cf8" stroke-width="1.5"/>
+                        <text x="325" y="198" fill="#818cf8" font-size="10" font-weight="bold" text-anchor="middle">Decision Trees</text>
+                        <text x="325" y="212" fill="#9ca3af" font-size="8" text-anchor="middle">Node Splits</text>
+                        
+                        <rect x="105" y="25" width="190" height="26" rx="13" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+                        <text x="200" y="42" fill="#10b981" font-size="9" font-weight="bold" text-anchor="middle">📈 Supervised Trend Forecasting</text>
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        
+        <div class="education-timeline">
+            <div class="education-row">
+                <div class="timeline-dot active-pulse"></div>
+
+                <div class="timeline-item-body">
+                    <div class="timeline-content">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">B.Tech in Computer Science and Systems Engineering</div>
+                                <div class="job-company">Sree Vidyanikethan Engineering College, Tirupati</div>
+                            </div>
+                            <div class="job-date">2019 – 2023</div>
+                        </div>
+                        <ul class="animated-list">
+                            <li>Graduated with an aggregate score of <span class="metric-badge">71%</span>.</li>
+                            <li>Gained hands-on academic project experience in database design, relational query writing, and supervised machine learning algorithm evaluation.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="education-graphic">
+                    <svg class="animated-svg" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="10" width="380" height="280" rx="14" fill="#0b1329" stroke="#1f2937" stroke-width="2"/>
+                        
+                        <circle cx="200" cy="75" r="45" fill="rgba(56, 189, 248, 0.03)" stroke="#1e293b" stroke-width="1"/>
+                        <circle cx="200" cy="75" r="30" fill="rgba(56, 189, 248, 0.05)" stroke="#1e293b" stroke-width="1" stroke-dasharray="2 2"/>
+                        <path class="radar-sweep" d="M200 75 L230 45" stroke="#38bdf8" stroke-width="2" opacity="0.6"/>
+                        <circle cx="200" cy="75" r="4.5" fill="#38bdf8" class="pulse-core"/>
+
+                        <g class="code-matrix-glitch">
+                            <text x="35" y="80" fill="#38bdf8" font-size="8" font-family="monospace">01100101</text>
+                            <text x="35" y="95" fill="#10b981" font-size="8" font-family="monospace">CS_SYS_ENG</text>
+                            <text x="315" y="80" fill="#818cf8" font-size="8" font-family="monospace">71%_GPA</text>
+                            <text x="315" y="95" fill="#38bdf8" font-size="8" font-family="monospace">11010011</text>
+                        </g>
+
+                        <g class="cap-super-float" transform="translate(135, 26)">
+                            <polygon points="65,10 125,35 65,60 5,35" fill="#38bdf8" stroke="#818cf8" stroke-width="2"/>
+                            <polygon points="65,60 125,35 125,45 65,70 5,45 5,35" fill="#0284c7"/>
+                            <rect x="35" y="55" width="60" height="28" rx="4" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+                            <path d="M115 38 L115 76" stroke="#f59e0b" stroke-width="2.5"/>
+                            <circle cx="115" cy="79" r="5" fill="#f59e0b" class="live-ping"/>
+                        </g>
+
+                        <path class="stream-line-active" d="M 30 125 Q 200 110 370 125" stroke="#38bdf8" stroke-width="2"/>
+                        <path class="stream-line-active" d="M 370 135 Q 200 150 30 135" stroke="#10b981" stroke-width="1.5" style="animation-direction: reverse;"/>
+
+                        <rect x="25" y="152" width="350" height="122" rx="10" fill="#111827" stroke="#38bdf8" stroke-width="1.5"/>
+                        <text x="200" y="176" fill="#f9fafb" font-size="11.5" font-weight="bold" text-anchor="middle">Sree Vidyanikethan Engineering College</text>
+                        <text x="200" y="193" fill="#38bdf8" font-size="9.5" text-anchor="middle">B.Tech in CS & Systems Engineering</text>
+                        <line x1="45" y1="205" x2="355" y2="205" stroke="#1f2937" stroke-width="1"/>
+                        
+                        <rect x="45" y="215" width="310" height="10" rx="5" fill="#1e293b" stroke="#334155"/>
+                        <rect class="progress-bar-live" x="45" y="215" width="220" height="10" rx="5" fill="url(#gradProgress)"/>
+                        
+                        <defs>
+                            <linearGradient id="gradProgress" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#0284c7" />
+                                <stop offset="50%" stop-color="#38bdf8" />
+                                <stop offset="100%" stop-color="#10b981" />
+                            </linearGradient>
+                        </defs>
+
+                        <text x="45" y="246" fill="#38bdf8" font-size="9" font-weight="bold">📅 2019 – 2023</text>
+                        <text x="355" y="246" fill="#10b981" font-size="9" font-weight="bold" text-anchor="end">🎯 Score: 71%</text>
+                        <circle cx="35" cy="164" r="4" fill="#10b981" class="live-ping"/>
+                        <circle cx="365" cy="164" r="4" fill="#38bdf8" class="live-ping"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" style="text-align: center;">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="btn-container" style="justify-content: center; margin-top: 1.5rem;">
+            <a href="mailto:derangulavenkatasai@gmail.com?subject=Inquiry%20-%20Venkata%20Sai%20Derangula" class="btn btn-primary">derangulavenkatasai@gmail.com</a>
+            <a href="tel:+918074267018" class="btn btn-secondary">+91 8074267018</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© Venkata Sai Derangula | Tirupati, Andhra Pradesh, India</p>
+    </footer>
+
+    <!-- Link to external JS file -->
+    <script src="script.js"></script>
+</body>
+</html>
