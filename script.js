@@ -43,31 +43,33 @@ function deletingEffect() {
 
 typingEffect();
 
-// DYNAMIC PDF GENERATION FOR RESUME DOWNLOAD WITH STRICT PAGE BREAK PREVENTIONS
+// DYNAMIC PDF GENERATION WITH FIXED PAGE BREAKS & PROPER FORMATTING
 function downloadResumePDF() {
-    const resumeHTML = `
-    <div style="font-family: Arial, sans-serif; padding: 25px; color: #1a1a1a; line-height: 1.45; font-size: 12px;">
+    // Create a temporary hidden container to render clean PDF layout
+    const element = document.createElement('div');
+    element.innerHTML = `
+    <div style="width: 750px; padding: 20px; font-family: Arial, Helvetica, sans-serif; color: #111827; line-height: 1.4; font-size: 11.5px; background: #ffffff;">
         
         <!-- HEADER -->
-        <div style="text-align: center; border-bottom: 2px solid #0284c7; padding-bottom: 10px; margin-bottom: 14px;">
-            <h1 style="margin: 0; font-size: 22px; color: #0284c7; text-transform: uppercase; letter-spacing: 0.5px;">VENKATA SAI DERANGULA</h1>
-            <p style="margin: 5px 0 0 0; font-size: 11px; color: #4b5563;">
+        <div style="text-align: center; border-bottom: 2px solid #0284c7; padding-bottom: 8px; margin-bottom: 12px;">
+            <h1 style="margin: 0; font-size: 20px; color: #0284c7; text-transform: uppercase; letter-spacing: 0.5px;">VENKATA SAI DERANGULA</h1>
+            <p style="margin: 4px 0 0 0; font-size: 10.5px; color: #4b5563;">
                 Tirupati, Andhra Pradesh, India | +91 8074267018 | derangulavenkatasai@gmail.com<br>
                 LinkedIn: linkedin.com/in/venkata-sai-derangula-b232b6243
             </p>
         </div>
 
         <!-- PROFESSIONAL SUMMARY -->
-        <div style="margin-bottom: 14px; page-break-inside: avoid;">
-            <h2 style="font-size: 13px; color: #0284c7; border-bottom: 1px solid #e5e7eb; padding-bottom: 3px; margin-bottom: 6px; text-transform: uppercase;">Professional Summary</h2>
+        <div style="margin-bottom: 12px; page-break-inside: avoid;">
+            <h2 style="font-size: 12px; color: #0284c7; border-bottom: 1px solid #d1d5db; padding-bottom: 2px; margin-bottom: 4px; text-transform: uppercase;">Professional Summary</h2>
             <p style="margin: 0; text-align: justify; color: #374151;">
                 Computer Science graduate with hands-on experience in technical operations, data pipelines, prompt engineering, and relational database management. Backed by an IBM certification in Databases and SQL for Data Science, practical academic project work in database design, and professional experience managing data operations teams, client communications, and technical support. Detail-oriented and analytical, seeking an entry-level SQL Developer position to leverage database design, query writing, prompt optimization, and data management skills.
             </p>
         </div>
 
         <!-- EDUCATION -->
-        <div style="margin-bottom: 14px; page-break-inside: avoid;">
-            <h2 style="font-size: 13px; color: #0284c7; border-bottom: 1px solid #e5e7eb; padding-bottom: 3px; margin-bottom: 6px; text-transform: uppercase;">Education</h2>
+        <div style="margin-bottom: 12px; page-break-inside: avoid;">
+            <h2 style="font-size: 12px; color: #0284c7; border-bottom: 1px solid #d1d5db; padding-bottom: 2px; margin-bottom: 4px; text-transform: uppercase;">Education</h2>
             <div style="display: flex; justify-content: space-between; font-weight: bold;">
                 <span>B.Tech in Computer Science and Systems Engineering</span>
                 <span>2019 – 2023</span>
@@ -79,17 +81,17 @@ function downloadResumePDF() {
         </div>
 
         <!-- WORK EXPERIENCE -->
-        <div style="margin-bottom: 14px;">
-            <h2 style="font-size: 13px; color: #0284c7; border-bottom: 1px solid #e5e7eb; padding-bottom: 3px; margin-bottom: 6px; text-transform: uppercase;">Work Experience</h2>
+        <div style="margin-bottom: 12px;">
+            <h2 style="font-size: 12px; color: #0284c7; border-bottom: 1px solid #d1d5db; padding-bottom: 2px; margin-bottom: 4px; text-transform: uppercase;">Work Experience</h2>
             
-            <div style="margin-bottom: 10px; page-break-inside: avoid;">
+            <div style="margin-bottom: 8px; page-break-inside: avoid;">
                 <div style="display: flex; justify-content: space-between; font-weight: bold;">
                     <span>Adept Talent Acquisition | Subject Matter Expert (SME) - Data Annotation</span>
                     <span>May 2025 – Present</span>
                 </div>
-                <ul style="margin: 3px 0 0 16px; padding: 0; color: #374151;">
+                <ul style="margin: 2px 0 0 16px; padding: 0; color: #374151;">
                     <li>Handled and coordinated a team of around 25+ annotators, managing workload distribution, quality checks, and performance tracking.</li>
-                    <li>Served as the primary client Point of Contact (POC), participating in weekly sync-up calls to communicate production milestones and quality metrics. Managed daily operational follow-ups and resolved project escalations to maintain high client satisfaction.</li>
+                    <li>Served as primary client Point of Contact (POC), participating in weekly sync-up calls to communicate production milestones and quality metrics. Managed daily operational follow-ups and resolved project escalations.</li>
                     <li>Led multiple LIDAR annotation projects for autonomous driving datasets, improving labeling accuracy by up to 25% through process optimization.</li>
                     <li>Trained and mentored junior annotators on 2D/3D labeling, segmentation, and polyline annotation best practices.</li>
                     <li>Performed in-depth point cloud analysis for object detection and lane marking projects.</li>
@@ -101,7 +103,7 @@ function downloadResumePDF() {
                     <span>MNV Solutions (Client: Marg ERP Ltd) | Technical Associate</span>
                     <span>July 2024 – March 2025</span>
                 </div>
-                <ul style="margin: 3px 0 0 16px; padding: 0; color: #374151;">
+                <ul style="margin: 2px 0 0 16px; padding: 0; color: #374151;">
                     <li>Delivered technical support and database troubleshooting for end-users operating Marg ERP software.</li>
                     <li>Conducted system configurations, database updates, and software installations via remote management tools.</li>
                     <li>Resolved technical and system-level issues to ensure operational stability and data accuracy.</li>
@@ -110,9 +112,9 @@ function downloadResumePDF() {
         </div>
 
         <!-- TECHNICAL SKILLS -->
-        <div style="margin-bottom: 14px; page-break-inside: avoid;">
-            <h2 style="font-size: 13px; color: #0284c7; border-bottom: 1px solid #e5e7eb; padding-bottom: 3px; margin-bottom: 6px; text-transform: uppercase;">Technical Skills</h2>
-            <ul style="margin: 3px 0 0 16px; padding: 0; color: #374151;">
+        <div style="margin-bottom: 12px; page-break-inside: avoid;">
+            <h2 style="font-size: 12px; color: #0284c7; border-bottom: 1px solid #d1d5db; padding-bottom: 2px; margin-bottom: 4px; text-transform: uppercase;">Technical Skills</h2>
+            <ul style="margin: 2px 0 0 16px; padding: 0; color: #374151;">
                 <li><b>Languages & Web:</b> Python, SQL, HTML, Prompt Engineering.</li>
                 <li><b>Tools & Platforms:</b> AWS Concepts, Marg ERP Software, Coda AI automation.</li>
                 <li><b>Data Annotation Tools:</b> HCP Tool, Labeling, Labelbox, Scale AI, etc.</li>
@@ -121,9 +123,9 @@ function downloadResumePDF() {
             </ul>
         </div>
 
-        <!-- PROJECTS SECTION (CONFIGURED TO AVOID PAGE CUTS) -->
-        <div style="margin-bottom: 14px; page-break-inside: avoid;">
-            <h2 style="font-size: 13px; color: #0284c7; border-bottom: 1px solid #e5e7eb; padding-bottom: 3px; margin-bottom: 6px; text-transform: uppercase;">Projects</h2>
+        <!-- PROJECTS -->
+        <div style="margin-bottom: 12px;">
+            <h2 style="font-size: 12px; color: #0284c7; border-bottom: 1px solid #d1d5db; padding-bottom: 2px; margin-bottom: 4px; text-transform: uppercase;">Projects</h2>
             
             <div style="margin-bottom: 8px; page-break-inside: avoid;">
                 <p style="margin: 0; font-weight: bold;">Legal & Administrative Case Management Hub <span style="font-weight: normal; font-style: italic; color: #4b5563;">| Vanilla JS, HTML5, CSS3, Chart.js, Prompt Engineering</span></p>
@@ -152,9 +154,9 @@ function downloadResumePDF() {
         </div>
 
         <!-- CERTIFICATIONS -->
-        <div style="margin-bottom: 14px; page-break-inside: avoid;">
-            <h2 style="font-size: 13px; color: #0284c7; border-bottom: 1px solid #e5e7eb; padding-bottom: 3px; margin-bottom: 6px; text-transform: uppercase;">Certifications</h2>
-            <ul style="margin: 3px 0 0 16px; padding: 0; color: #374151;">
+        <div style="margin-bottom: 12px; page-break-inside: avoid;">
+            <h2 style="font-size: 12px; color: #0284c7; border-bottom: 1px solid #d1d5db; padding-bottom: 2px; margin-bottom: 4px; text-transform: uppercase;">Certifications</h2>
+            <ul style="margin: 2px 0 0 16px; padding: 0; color: #374151;">
                 <li>IBM Certificate in Databases and SQL for Data Science – Coursera</li>
                 <li>Simplilearn Certification in Python</li>
                 <li>Web Development Using Django Certificate</li>
@@ -164,7 +166,7 @@ function downloadResumePDF() {
 
         <!-- DECLARATION -->
         <div style="page-break-inside: avoid;">
-            <h2 style="font-size: 13px; color: #0284c7; border-bottom: 1px solid #e5e7eb; padding-bottom: 3px; margin-bottom: 6px; text-transform: uppercase;">Declaration</h2>
+            <h2 style="font-size: 12px; color: #0284c7; border-bottom: 1px solid #d1d5db; padding-bottom: 2px; margin-bottom: 4px; text-transform: uppercase;">Declaration</h2>
             <p style="margin: 0; font-style: italic; color: #4b5563;">
                 I hereby declare that the information furnished above is true up to my knowledge and bear the responsibility for the correctness of the above mentioned particulars.
             </p>
@@ -173,18 +175,18 @@ function downloadResumePDF() {
     `;
 
     const opt = {
-        margin:       [0.35, 0.35, 0.35, 0.35],
+        margin:       [0.3, 0.3, 0.3, 0.3],
         filename:     'VENKATA_SAI_DERANGULA_resume.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2, useCORS: true },
+        html2canvas:  { scale: 2, useCORS: true, logging: false },
         jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' },
         pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
     };
 
-    html2pdf().set(opt).from(resumeHTML).save();
+    html2pdf().set(opt).from(element).save();
 }
 
-// ANIMATION HANDLERS
+// ANIMATION & SCROLL HANDLERS
 document.addEventListener('DOMContentLoaded', () => {
     const heroHeader = document.querySelector('header');
     
@@ -227,30 +229,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', handleScrollPopups);
     handleScrollPopups();
-
-    const navLinks = document.querySelectorAll('nav ul li a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            const targetId = link.getAttribute('href');
-            
-            if (targetId && targetId !== '#about') {
-                const targetSection = document.querySelector(targetId);
-                if (targetSection) {
-                    const lefts = targetSection.querySelectorAll('.scroll-popup-left');
-                    const rights = targetSection.querySelectorAll('.scroll-popup-right');
-                    
-                    lefts.forEach(el => el.classList.remove('show-popup'));
-                    rights.forEach(el => el.classList.remove('show-popup'));
-
-                    setTimeout(() => {
-                        lefts.forEach(el => el.classList.add('show-popup'));
-                    }, 200);
-
-                    setTimeout(() => {
-                        rights.forEach(el => el.classList.add('show-popup'));
-                    }, 650);
-                }
-            }
-        });
-    });
 });
